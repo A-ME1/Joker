@@ -300,3 +300,32 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach(el => observer.observe(el));
 
 });
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+    document.onkeydown = function(e) {
+        // منع F12
+        if (e.keyCode == 123) {
+            return false;
+        }
+        // منع Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        // منع Ctrl+Shift+C (Inspect Element)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        // منع Ctrl+Shift+J (Console)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        // منع Ctrl+U (View Source)
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+        // منع Ctrl+S (Save Page)
+        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+            return false;
+        }
+    };
